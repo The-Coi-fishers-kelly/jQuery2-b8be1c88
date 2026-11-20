@@ -1,3 +1,3 @@
-$(".vierkant").click(function() {
+$(".vierkant, .rechthoek").click(function() {
     $(this).hide();
 })
