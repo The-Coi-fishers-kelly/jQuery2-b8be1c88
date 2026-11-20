@@ -11,6 +11,13 @@
     width: 200px;
     height: 100px;
 }
+
+.vierkant-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
 .vierkant-row {
     display: flex;
     flex-direction: row;
