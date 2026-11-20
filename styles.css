@@ -39,3 +39,24 @@
 
 #double{}
 #mouse{}
+#fill-me{}
+#read{}
+.trailer-dialog {
+    width: min(420px, 85vw);
+    padding: 24px;
+
+    background: #161b24;
+    color: white;
+
+    border: 1px solid #777;
+    border-radius: 12px;
+}
+
+.trailer-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#close-trailer {
+    padding: 10px 20px;
+    cursor: pointer;
+}
