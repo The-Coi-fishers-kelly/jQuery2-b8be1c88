@@ -1,32 +1,47 @@
+<!-- Deze oefening combineert HTML (structuur), CSS (vormgeving) en JavaScript/jQuery (interactie). -->
 <!DOCTYPE html>
 <html>
+    <!-- In de head staan de titel, mobiele instellingen en externe bestanden; deze tekst zie je niet op de pagina. -->
     <head>
         <title>Welkom bij Vierkanten en Rechthoeken</title>
+        <!-- Zorgt dat de breedte van de pagina zich aanpast aan mobiele toestellen. -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
+        <!-- W3.CSS levert bestaande kleur-, marge- en knopklassen zoals w3-blue en w3-button. -->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+        <!-- Onze eigen styles.css definieert de afmetingen en de hover-effecten. -->
         <link rel="stylesheet" href="styles.css">
+        <!-- Laad de jQuery-bibliotheek vóór script.js, anders is het $-symbool nog onbekend. -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 <body>
 
+    <!-- Semantische header: een blauwe balk met de titel van de pagina. -->
     <header class="w3-bar w3-blue">
         <p class="w3-bar-item">Start project webdesign</p>
     </header>
 
+    <!-- Main: de oefeningen zelf. De -row/-column-klassen worden in styles.css met flexbox opgesteld. -->
     <main class="w3-container">
         <div class="vierkant-column">
             <div class="vierkant-row">
+                <!-- Een klasse mag door meerdere elementen worden gebruikt: .vierkant bepaalt grootte; w3-red de kleur. -->
                 <div class="vierkant w3-red border w3-margin"></div>
+                <!-- Een id is uniek. JavaScript gebruikt #double om juist dit vak bij een dubbelklik paars te maken. -->
                 <div id="double" class="vierkant-special w3-blue border w3-margin"></div>
+                <!-- De CSS-regel #vierkant-ho:hover vergroot dit vak zolang de aanwijzer erop staat. -->
                 <div id="vierkant-ho" class="vierkant-special w3-green border w3-margin"></div>
+                <!-- #mouse wordt door de jQuery-gebeurtenis mouseenter van geel naar zwart veranderd. -->
                 <div id="mouse" class="vierkant w3-yellow border w3-margin"></div>
             </div>
             <div class="vierkant-row">
+                <!-- In script.js wordt de inhoud van #fill-me vervangen met .text(...). -->
                 <div id="fill-me" class="rechthoek-special w3-red border w3-margin">fill me</div>
+                <!-- Dit blauwe vak bevat de knop die via addEventListener het dialoogvenster opent. -->
                 <div id="read" class="rechthoek w3-blue border w3-margin">
                     <button id="trailer-button" type="button" class="w3-button w3-white">Lees meer</button>
               </div>
+              <!-- <dialog> is een ingebouwd HTML-venster. showModal() opent het; close() sluit het. -->
               <dialog id="trailer-dialog" class="trailer-dialog">
                     
                     <p id="trailer-status">Dit is een oefening met een HTML-dialoogvenster.</p>
@@ -35,6 +50,7 @@
                        Je hebt op de knop geklikt.
                     </p>
 
+                    <!-- Deze id wordt gebruikt om de sluitknop vanuit script.js te vinden. -->
                     <button id="close-trailer" type="button">
                         Sluiten
                     </button>
@@ -52,9 +68,11 @@
         </div>
     </main>
 
+    <!-- Footer blijft dankzij w3-bottom aan de onderzijde van het venster staan. -->
     <footer class="w3-bottom w3-bar w3-blue">
         <p class="w3-bar-item w3-center">© 2026 by @KellyIgbokweKuti</p>
     </footer>
+    <!-- Onze gebeurtenissen worden gekoppeld nadat de HTML-elementen zijn aangemaakt. -->
     <script src="script.js"></script>
 </body>
 </html>
