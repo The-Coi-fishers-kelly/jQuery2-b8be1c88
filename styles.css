@@ -1,25 +1,30 @@
+/* Beide vierkantklassen krijgen exact dezelfde afmetingen; komma = meerdere selectors. */
 .vierkant,
 .vierkant-special {
     width: 100px;
     height: 100px;
 }
 
+/* Extra kader rond alle elementen met class="border". */
 .border {
     border: 2px solid black;
 }
 
+/* Rechthoeken zijn twee keer zo breed als een gewoon vierkant. */
 .rechthoek,
 .rechthoek-special {
     width: 200px;
     height: 100px;
 }
 
+/* Flexbox stapelt de verschillende rijen onder elkaar; gap maakt ruimte ertussen. */
 .vierkant-column {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
+/* De vakken staan binnen elke rij horizontaal naast elkaar. align-items centreert ze verticaal. */
 .vierkant-row {
     display: flex;
     flex-direction: row;
@@ -27,25 +32,30 @@
     gap: 2px;
 }
 
+/* transition maakt veranderingen van transform en filter geleidelijk, in plaats van abrupt. */
 #vierkant-ho {
     transition:
         transform 0.3s ease,
         filter 0.3s ease;
 }
 
+/* :hover geldt alleen wanneer de muis op het groene speciale vak staat. */
 #vierkant-ho:hover {
     transform: scale(1.05);
     filter: brightness(1.15);
 }
 
+/* Deze lege id-regels zijn niet nodig voor de werking; de ids worden ook in JS gebruikt. */
 #double{}
 #mouse{}
 #fill-me{}
 #read{}
+/* Het dialoogvenster is maximaal 420px breed, maar mag op smalle schermen niet breder dan 85vw zijn. */
 .trailer-dialog {
     width: min(420px, 85vw);
     padding: 24px;
 
+    /* Donkere achtergrond met lichte letters voor contrast. */
     background: #161b24;
     color: white;
 
@@ -53,10 +63,12 @@
     border-radius: 12px;
 }
 
+/* ::backdrop is de donkere laag achter het geopende modale venster. */
 .trailer-dialog::backdrop {
     background: rgba(0, 0, 0, 0.75);
 }
 
+/* cursor: pointer laat bij een muis zien dat dit element aangeklikt kan worden. */
 #close-trailer {
     padding: 10px 20px;
     cursor: pointer;
