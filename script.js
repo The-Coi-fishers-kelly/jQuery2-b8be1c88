@@ -1,32 +1,36 @@
-$(".vierkant, .rechthoek").click(function() {
-    $(this).hide();
-})
+// Wacht tot de HTML-pagina en alle elementen geladen zijn.
+$(function () {
+    // De gewone vierkanten en rechthoeken verdwijnen na een klik.
+    // #read blijft zichtbaar: anders zou een klik op zijn knop het paneel verbergen.
+    $(".vierkant, .rechthoek").not("#read").on("click", function () {
+        $(this).hide();
+    });
 
-$("#double").dblclick(function() {
-    $(this).removeClass("w3-blue").addClass("w3-purple")
-})
+    // Dubbelklikken vervangt de blauwe W3.CSS-kleurklasse door paars.
+    $("#double").on("dblclick", function () {
+        $(this).removeClass("w3-blue").addClass("w3-purple");
+    });
 
-$("#mouse").mouseenter(function() {
-  $(this).removeClass("w3-yellow").addClass("w3-black")
-});
+    // De gele tegel wordt zwart wanneer de muis erop komt.
+    $("#mouse").on("mouseenter", function () {
+        $(this).removeClass("w3-yellow").addClass("w3-black");
+    });
 
-$("#fill-me").text("goede dag!");
+    // Pas de tekst van het rode vak aan zodra de pagina geladen is.
+    $("#fill-me").text("goede dag!");
 
-const read = document.querySelector("#trailer-button");
+    // Een <dialog> wordt geopend met showModal() en gesloten met close().
+    const trailerButton = document.querySelector("#trailer-button");
+    const trailerDialog = document.querySelector("#trailer-dialog");
+    const closeButton = document.querySelector("#close-trailer");
+    const trailerStatus = document.querySelector("#trailer-status");
 
-const trailerDialog = document.querySelector("#trailer-dialog");
+    trailerButton.addEventListener("click", function () {
+        trailerStatus.textContent = "Het infovenster is geopend.";
+        trailerDialog.showModal();
+    });
 
-const closeButton = document.querySelector("#close-trailer");
-
-const trailerVideo = document.querySelector("#trailer-video");
-
-const trailerStatus = document.querySelector("#trailer-status");
-
-
-read.addEventListener("click", () => {
-
-    trailerDialog.showModal();
-
-    trailerStatus.textContent = "Trailer window opened!";
-
+    closeButton.addEventListener("click", function () {
+        trailerDialog.close();
+    });
 });
